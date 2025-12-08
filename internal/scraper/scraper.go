@@ -79,7 +79,7 @@ func (s *AnimeScraper) ScrapeOngoingAnime(ctx context.Context, page int) ([]anim
 			Episode:     extractEpisodeNumber(epText),
 			Day:         day,
 			Date:        dateText,
-			Immage:		 absoluteURL(s.baseURL, img),
+			Image:		 absoluteURL(s.baseURL, img),
 			Endpoint:    href,
 		}
 
