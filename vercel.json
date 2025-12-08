@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     { "src": "^/$", "dest": "/api/index" },
-    { "src": "^/api/v1/(.*)$", "dest": "/api/index" },
-    { "src": "^/healthz$", "dest": "/api/index" }
+    { "src": "^/healthz$", "dest": "/api/index" },
+    { "src": "^/api/v1/.*$", "dest": "/api/index" }
   ],
   "build": {
     "env": {
