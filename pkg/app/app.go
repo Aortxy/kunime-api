@@ -26,7 +26,6 @@ func initApp() {
 
 	app := httpserver.NewServer(cfg, svc)
 
-	// Bungkus Fiber ke net/http handler
 	handler = adaptor.FiberApp(app)
 }
 
