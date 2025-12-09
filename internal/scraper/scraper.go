@@ -22,20 +22,6 @@ func NewCollyScraper(baseURL string) *AnimeScraper {
 	return &AnimeScraper{baseURL: baseURL}
 }
 
-// ScrapeAnimeEpisodes implements anime.Scraper.
-func (s *AnimeScraper) ScrapeAnimeEpisodes(ctx context.Context, slug string) ([]anime.Episode, error) {
-	panic("unimplemented")
-}
-
-// SearchAnime implements anime.Scraper.
-func (s *AnimeScraper) SearchAnime(ctx context.Context, query string) ([]anime.Anime, error) {
-	panic("unimplemented")
-}
-
-func (s *AnimeScraper) ScrapeAnimeDetail(ctx context.Context, slug string) (*anime.Anime, error) {
-	panic("not implemented")
-}
-
 func (s *AnimeScraper) ScrapeOngoingAnime(ctx context.Context, page int) ([]anime.OngoingAnime, error) {
 	ongoings := make([]anime.OngoingAnime, 0)
 

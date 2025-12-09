@@ -34,10 +34,6 @@ func NewServer(cfg config.Config, animeSvc *anime.Service) *fiber.App {
     api.Get("/ongoing-anime", h.GetOngoingAnime)
     api.Get("/ongoing-anime/:page", h.GetOngoingAnime)
 
-    // api.Get("/anime/:slug", h.GetAnimeDetail)
-    // api.Get("/anime/:slug/episodes", h.GetAnimeEpisodes)
-    // api.Get("/search", h.SearchAnime)
-
     app.Get("/healthz", func(c *fiber.Ctx) error {
         return c.JSON(fiber.Map{"status": "ok"})
     })
