@@ -8,3 +8,12 @@ type OngoingAnime struct {
 	Image       string `json:"image"`
     Endpoint    string `json:"endpoint"`
 }
+
+type CompletedAnime struct {
+	Title    string  `json:"title"`
+	Episodes int     `json:"episodes"`
+	Score    float64 `json:"score"`
+	Date     string  `json:"date"`
+	Image    string  `json:"image"`
+	Endpoint string  `json:"endpoint"`
+}

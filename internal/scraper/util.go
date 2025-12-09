@@ -40,3 +40,19 @@ func absoluteURL(base, p string) string {
 	u.Path = path.Join(u.Path, p)
 	return u.String()
 }
+
+func extractScore(text string) float64 {
+	text = strings.TrimSpace(text)
+	if text == "" {
+		return 0
+	}
+
+	parts := strings.Fields(text)
+	last := parts[len(parts)-1]
+
+	f, err := strconv.ParseFloat(last, 64)
+	if err != nil {
+		return 0
+	}
+	return f
+}

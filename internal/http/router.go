@@ -24,6 +24,7 @@ func NewServer(cfg config.Config, animeSvc *anime.Service) *fiber.App {
             "support": "https://buymeacoffee.com/kudanil",
             "endpoint": fiber.Map {
                 "Get Ongoing Anime": "/api/v1/ongoing-anime/:page", 
+                "Get Completed Anime": "/api/v1/completed-anime/:page", 
             },
         })
 	})
@@ -33,6 +34,10 @@ func NewServer(cfg config.Config, animeSvc *anime.Service) *fiber.App {
     // ongoing anime
     api.Get("/ongoing-anime", h.GetOngoingAnime)
     api.Get("/ongoing-anime/:page", h.GetOngoingAnime)
+
+	// completed anime
+	api.Get("/completed-anime", h.GetCompletedAnime)
+	api.Get("/completed-anime/:page", h.GetCompletedAnime)
 
     app.Get("/healthz", func(c *fiber.Ctx) error {
         return c.JSON(fiber.Map{"status": "ok"})

@@ -2,36 +2,46 @@ package handler
 
 import (
 	"kunime-api/internal/anime"
-	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 type AnimeHandler struct {
-    svc *anime.Service
+	svc *anime.Service
 }
 
 func NewAnimeHandler(svc *anime.Service) *AnimeHandler {
-    return &AnimeHandler{svc: svc}
+	return &AnimeHandler{svc: svc}
 }
 
 func (h *AnimeHandler) GetOngoingAnime(c *fiber.Ctx) error {
-	pageStr := c.Params("page", "1")
-	page, err := strconv.Atoi(pageStr)
-    
-	if err != nil || page < 1 {
-		page = 1
-	}
+	page := getPageParam(c)
 
-	items, err := h.svc.GetOngoingAnime(c.Context(), page)
+	data, err := h.svc.GetOngoingAnime(c.UserContext(), page)
 	if err != nil {
-		return c.Status(fiber.StatusBadGateway).JSON(fiber.Map{
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 			"error": err.Error(),
 		})
 	}
 
 	return c.JSON(fiber.Map{
-		"currentPage":  page,
-		"content": items,
+		"page": page,
+		"data": data,
+	})
+}
+
+func (h *AnimeHandler) GetCompletedAnime(c *fiber.Ctx) error {
+	page := getPageParam(c)
+
+	data, err := h.svc.GetCompletedAnime(c.UserContext(), page)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"page": page,
+		"data": data,
 	})
 }
