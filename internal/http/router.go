@@ -23,7 +23,7 @@ func NewServer(cfg config.Config, animeSvc *anime.Service) *fiber.App {
             "github": "https://github.com/kudanilll/kunime-api", 
             "support": "https://buymeacoffee.com/kudanil",
             "endpoint": fiber.Map {
-                "getOngoingAnime": "/api/v1/ongoing/:page", 
+                "Get Ongoing Anime": "/api/v1/ongoing-anime/:page", 
             },
         })
 	})
