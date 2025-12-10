@@ -10,7 +10,7 @@ Lightweight Go + Fiber service that scrapes anime data from [Otakudesu](https://
 
 ## Prerequisites
 
-- Go 1.25+ (see `go.mod`)
+- Go 1.25+ (see [`go.mod`](go.mod))
 - Internet access to the target `SCRAPE_BASE_URL`
 
 ## Environment Configuration
@@ -20,7 +20,7 @@ Create a `.env` file in the project root (or set environment variables directly)
 ```env
 PORT=8080
 API_KEY=supersecret
-SCRAPE_BASE_URL=https://otakudesu.best   # source URL to scrape
+SCRAPE_BASE_URL=https://otakudesu.best
 USER_AGENT=Mozilla/5.0 ...
 ```
 
@@ -34,9 +34,10 @@ USER_AGENT=Mozilla/5.0 ...
 ## Run Locally
 
 ```bash
-go run ./cmd/server
+go run ./cmd/server/main.go
+
 # or inline env:
-API_KEY=supersecret SCRAPE_BASE_URL=https://otakudesu.best USER_AGENT="Mozilla/5.0 ..." go run ./cmd/server
+API_KEY=supersecret SCRAPE_BASE_URL=https://otakudesu.best USER_AGENT="Mozilla/5.0 ..." go run ./cmd/server/main.go
 ```
 
 The server will be available at `http://localhost:<PORT>`.
@@ -94,4 +95,4 @@ Full API details live in [`docs/API.md`](docs/API.md).
 
 ## License
 
-Apache License 2.0 – see `LICENSE`.
+Apache License 2.0 – see [`LICENSE`](LICENSE).
