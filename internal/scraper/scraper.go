@@ -122,11 +122,11 @@ func (s *AnimeScraper) ScrapeCompletedAnime(ctx context.Context, page int) ([]an
 			return
 		}
 
-		// contoh: "12 Episode"
+		// exam: "12 Episode"
 		epText := strings.TrimSpace(e.ChildText(".epz"))
 		episodes := extractEpisodeNumber(epText)
 
-		// contoh: "<i ...></i> 7.07" -> "7.07"
+		// exam: "<i ...></i> 7.07" -> "7.07"
 		scoreText := strings.TrimSpace(e.ChildText(".epztipe"))
 		score := extractScore(scoreText)
 
@@ -177,7 +177,7 @@ func (s *AnimeScraper) ScrapeGenres(ctx context.Context) ([]anime.Genre, error) 
 	genres := make([]anime.Genre, 0)
 
 	c := colly.NewCollector(
-		colly.Async(false), // tetap sync biar hidup tenang
+		colly.Async(false),
 	)
 
 	_ = c.Limit(&colly.LimitRule{
@@ -192,7 +192,6 @@ func (s *AnimeScraper) ScrapeGenres(ctx context.Context) ([]anime.Genre, error) 
 		}
 	})
 
-	// dari HTML: <ul class="genres"><li><a ...>Action</a><a ...>Adventure</a>...</li></ul>
 	c.OnHTML("ul.genres li a", func(e *colly.HTMLElement) {
 		if err := ctx.Err(); err != nil {
 			return
