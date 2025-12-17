@@ -50,8 +50,8 @@ All endpoints require the header `X-API-Key: <API_KEY>`.
 | ------ | -------------------------------- | -------------------------------------- |
 | GET    | `/`                              | Quick info and endpoint list           |
 | GET    | `/healthz`                       | Health check                           |
-| GET    | `/api/v1/ongoing-anime[:page]`   | Ongoing anime list (page defaults 1)   |
-| GET    | `/api/v1/completed-anime[:page]` | Completed anime list (page defaults 1) |
+| GET    | `/api/v1/ongoing-anime/:page`    | Ongoing anime list (page defaults 1)   |
+| GET    | `/api/v1/completed-anime/:page`  | Completed anime list (page defaults 1) |
 | GET    | `/api/v1/genres`                 | List of available genres               |
 | GET    | `/api/v1/genre/:genreSlug/:page` | Anime by genre and page                |
 
