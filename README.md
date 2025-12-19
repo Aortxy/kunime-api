@@ -54,12 +54,12 @@ All endpoints require the header `X-API-Key: <API_KEY>`.
 | GET    | `/api/v1/completed-anime/:page`  | Completed anime list (page defaults 1) |
 | GET    | `/api/v1/genres`                 | List of available genres               |
 | GET    | `/api/v1/genre/:genreSlug/:page` | Anime by genre and page                |
+| GET    | `/api/v1/anime/:animeSlug/batch` | Anime batch download links             |
 
 Examples:
 
 ```bash
 curl -H "X-API-Key: supersecret" http://localhost:8080/api/v1/ongoing-anime/1
-curl -H "X-API-Key: supersecret" http://localhost:8080/api/v1/genre/action/1
 ```
 
 Example response (shortened):
