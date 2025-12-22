@@ -69,5 +69,9 @@ func (s *AnimeScraper) ScrapeOngoingAnime(ctx context.Context, page int) ([]anim
 		return nil, scrapeErr
 	}
 
+	if len(ongoings) == 0 {
+		return nil, fmt.Errorf("no ongoing anime found")
+	}
+
 	return ongoings, nil
 }

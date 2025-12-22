@@ -75,5 +75,9 @@ func (s *AnimeScraper) ScrapeGenrePage(ctx context.Context, slug string, page in
 		return nil, scrapeErr
 	}
 
+	if len(items) == 0 {
+		return nil, fmt.Errorf("no genre page anime found")
+	}
+
 	return items, nil
 }

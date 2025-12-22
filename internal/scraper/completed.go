@@ -67,5 +67,9 @@ func (s *AnimeScraper) ScrapeCompletedAnime(ctx context.Context, page int) ([]an
 		return nil, scrapeErr
 	}
 
+	if len(completed) == 0 {
+		return nil, fmt.Errorf("no completed anime found")
+	}
+	
 	return completed, nil
 }

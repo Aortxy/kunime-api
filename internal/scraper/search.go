@@ -60,6 +60,10 @@ func (s *AnimeScraper) SearchAnime(
 		return nil, scrapeErr
 	}
 
+	if len(results) == 0 {
+		return nil, fmt.Errorf("no search results found")
+	}
+
 	return &anime.AnimeSearchResponse{
 		Query: query,
 		Data:  results,

@@ -52,5 +52,9 @@ func (s *AnimeScraper) ScrapeGenres(ctx context.Context) ([]anime.Genre, error) 
 		return nil, scrapeErr
 	}
 
+	if len(genres) == 0 {
+		return nil, fmt.Errorf("no genres found")
+	}
+
 	return genres, nil
 }
