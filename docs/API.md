@@ -9,8 +9,6 @@
 - [API Endpoints](#api-endpoints)
 - [Error Responses](#error-responses)
 
----
-
 ## Overview
 
 Kunime API is a high-performance REST API built with Go and Fiber that provides comprehensive anime data scraped from Otakudesu. Access information about ongoing anime, completed series, genres, episode lists, download links, and more through clean, RESTful endpoints.
@@ -23,8 +21,6 @@ Kunime API is a high-performance REST API built with Go and Fiber that provides 
 - Genre-based filtering
 - Episode and download link information
 - Search functionality
-
----
 
 ## Getting Started
 
@@ -71,8 +67,6 @@ go run ./cmd/server/main.go
 
 The server will start at `http://localhost:8080` (or your configured port).
 
----
-
 ## Authentication
 
 All API endpoints (except health check) require authentication via API key.
@@ -88,8 +82,6 @@ X-API-Key: your_api_key_here
 | Status | Response                       | Description                |
 | ------ | ------------------------------ | -------------------------- |
 | 401    | `{"error": "invalid api key"}` | Missing or invalid API key |
-
----
 
 ## Base URLs
 
@@ -150,8 +142,6 @@ Returns service health status. **No authentication required.**
 }
 ```
 
----
-
 ## API Endpoints
 
 All endpoints require the `X-API-Key` header unless otherwise specified.
@@ -206,8 +196,6 @@ curl -X GET "http://localhost:8080/api/v1/ongoing-anime/1" \
 }
 ```
 
----
-
 ### 2. Completed Anime
 
 Get list of completed anime series.
@@ -250,8 +238,6 @@ curl -X GET "http://localhost:8080/api/v1/completed-anime/1" \
 }
 ```
 
----
-
 ### 3. Genres
 
 Get list of all available anime genres.
@@ -292,8 +278,6 @@ curl -X GET "http://localhost:8080/api/v1/genres" \
   ]
 }
 ```
-
----
 
 ### 4. Anime by Genre
 
@@ -341,8 +325,6 @@ curl -X GET "http://localhost:8080/api/v1/genre/action/1" \
 }
 ```
 
----
-
 ### 5. Anime Detail
 
 Get detailed information about a specific anime.
@@ -385,8 +367,6 @@ curl -X GET "http://localhost:8080/api/v1/anime/kakkou-iinazuke-s2-sub-indo" \
   "synopsis": "Musim kedua dari anime Kakkou no Iinazuke yang menceritakan..."
 }
 ```
-
----
 
 ### 6. Episode List
 
@@ -432,8 +412,6 @@ curl -X GET "http://localhost:8080/api/v1/anime/kakkou-iinazuke-s2-sub-indo/epis
   ]
 }
 ```
-
----
 
 ### 7. Batch Download Links
 
@@ -516,8 +494,6 @@ curl -X GET "http://localhost:8080/api/v1/anime/kni-s2-batch-sub-indo/batch" \
 }
 ```
 
----
-
 ### 8. Search Anime
 
 Search for anime by title or keywords.
@@ -567,8 +543,6 @@ curl -X GET "http://localhost:8080/api/v1/search/jujutsu+kaisen" \
 }
 ```
 
----
-
 ## Error Responses
 
 The API uses standard HTTP status codes to indicate success or failure.
@@ -617,8 +591,6 @@ The API uses standard HTTP status codes to indicate success or failure.
 }
 ```
 
----
-
 ## Notes & Limitations
 
 **Important Considerations:**
@@ -642,8 +614,6 @@ The API uses standard HTTP status codes to indicate success or failure.
 5. **Data Freshness**: Data is scraped in real-time, ensuring up-to-date information but potentially longer response times.
 
 6. **Download Links**: Links in the batch endpoint may redirect through the source site's safelink system.
-
----
 
 ## Support & Contribution
 
