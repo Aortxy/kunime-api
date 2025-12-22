@@ -254,14 +254,9 @@ All endpoints below require `X-API-Key`.
   "data": [
     {
       "title": "Shingeki no Kyojin: The Final Season – Kanketsu-hen Sub Indo",
-      "status": "OngoingRating : 8.64",
+      "status": "Ongoing",
       "rating": "8.64",
-      "genres": [
-        "Action",
-        "Drama",
-        "Gore",
-        "MilitaryStatus : OngoingRating : 8.64"
-      ],
+      "genres": ["Action", "Drama", "Gore", "Military"],
       "image": "https://otakudesu.best/wp-content/uploads/2023/03/Shingeki-no-Kyojin-The-Final-Season-Kanketsu-hen.jpg",
       "endpoint": "https://otakudesu.best/anime/snk-final-part3-sub-indo/"
     }
