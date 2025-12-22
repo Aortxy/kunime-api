@@ -14,11 +14,13 @@ func (s *AnimeScraper) ScrapeAnimeBatch(
 	ctx context.Context,
 	animeSlug string,
 ) (*anime.AnimeBatch, error) {
+	acquire()
+	defer release()
 
+	c := newCollector(ctx, s.userAgent)
 	result := &anime.AnimeBatch{
 		Qualities: make([]anime.BatchQuality, 0),
 	}
-	c := newCollector(ctx, s.userAgent)
 
 	c.OnHTML("div.batchlink", func(e *colly.HTMLElement) {
 		result.Title = strings.TrimSpace(e.ChildText("h4"))

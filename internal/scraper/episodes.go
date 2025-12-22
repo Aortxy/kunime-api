@@ -15,9 +15,10 @@ func (s *AnimeScraper) ScrapeAnimeEpisodes(
 	ctx context.Context,
 	animeSlug string,
 ) (*anime.AnimeEpisodeList, error) {
+	acquire()
+	defer release()
 
 	c := newCollector(ctx, s.userAgent)
-
 	episodes := make([]anime.AnimeEpisode, 0)
 
 	c.OnHTML("div.episodelist ul li", func(e *colly.HTMLElement) {

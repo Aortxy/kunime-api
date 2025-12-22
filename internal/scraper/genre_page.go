@@ -12,6 +12,9 @@ import (
 
 // TODO: handle unknown episode
 func (s *AnimeScraper) ScrapeGenrePage(ctx context.Context, slug string, page int) ([]anime.GenrePageAnime, error) {
+	acquire()
+	defer release()
+
 	items := make([]anime.GenrePageAnime, 0)
 	c := newCollector(ctx, s.userAgent)
 

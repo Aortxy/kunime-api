@@ -12,6 +12,9 @@ import (
 
 
 func (s *AnimeScraper) ScrapeOngoingAnime(ctx context.Context, page int) ([]anime.OngoingAnime, error) {
+	acquire()
+	defer release()
+
 	ongoings := make([]anime.OngoingAnime, 0)
 	c := newCollector(ctx, s.userAgent)
 

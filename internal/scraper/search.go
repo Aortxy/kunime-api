@@ -15,9 +15,10 @@ func (s *AnimeScraper) SearchAnime(
 	ctx context.Context,
 	query string,
 ) (*anime.AnimeSearchResponse, error) {
+	acquire()
+	defer release()
 
 	c := newCollector(ctx, s.userAgent)
-
 	results := make([]anime.AnimeSearchResult, 0)
 
 	c.OnHTML(".page li", func(e *colly.HTMLElement) {

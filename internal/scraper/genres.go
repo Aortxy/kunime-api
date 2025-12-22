@@ -11,6 +11,9 @@ import (
 )
 
 func (s *AnimeScraper) ScrapeGenres(ctx context.Context) ([]anime.Genre, error) {
+	acquire()
+	defer release()
+
 	genres := make([]anime.Genre, 0)
 	c := newCollector(ctx, s.userAgent)
 

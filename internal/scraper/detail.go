@@ -14,9 +14,10 @@ func (s *AnimeScraper) ScrapeAnimeDetail(
 	ctx context.Context,
 	animeSlug string,
 ) (*anime.AnimeDetail, error) {
+	acquire()
+	defer release()
 
 	c := newCollector(ctx, s.userAgent)
-
 	result := &anime.AnimeDetail{
 		Genres:    make([]string, 0),
 		Producers: make([]string, 0),

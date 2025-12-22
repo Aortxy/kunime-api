@@ -11,6 +11,9 @@ import (
 )
 
 func (s *AnimeScraper) ScrapeCompletedAnime(ctx context.Context, page int) ([]anime.CompletedAnime, error) {
+	acquire()
+	defer release()
+
 	completed := make([]anime.CompletedAnime, 0)
 	c := newCollector(ctx, s.userAgent)
 
