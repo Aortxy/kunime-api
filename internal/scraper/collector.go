@@ -11,7 +11,6 @@ func newCollector(ctx context.Context, userAgent string) *colly.Collector {
 	c := colly.NewCollector(
 		colly.Async(false),
 		colly.UserAgent(userAgent),
-    colly.AllowURLRevisit(),
 	)
 
 	_ = c.Limit(&colly.LimitRule{
