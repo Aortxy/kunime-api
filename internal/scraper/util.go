@@ -94,12 +94,12 @@ func extractEpisodeFromTitle(title string) int {
 	title = strings.ToLower(title)
 
 	// cari kata "episode"
-	idx := strings.Index(title, "episode")
-	if idx == -1 {
+	_, after, ok := strings.Cut(title, "episode")
+	if !ok {
 		return 0
 	}
 
-	part := title[idx+len("episode"):]
+	part := after
 	part = strings.TrimSpace(part)
 
 	fields := strings.Fields(part)
