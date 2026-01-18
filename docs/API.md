@@ -735,7 +735,6 @@ curl -X POST http://localhost:8080/api/v1/streams/resolve \
 1. **Data Source Dependency**: This API scrapes data from Otakudesu. Any changes to their website structure may temporarily affect API functionality.
 
 2. **Pagination**:
-
    - Page numbers start at 1
    - Invalid page numbers default to 1
    - Pagination mirrors the source site structure
@@ -743,7 +742,6 @@ curl -X POST http://localhost:8080/api/v1/streams/resolve \
 3. **Performance**: Response times depend on the source website's availability and response time.
 
 4. **Slug Formats**:
-
    - Anime slugs typically end with `-sub-indo`
    - Batch slugs end with `-batch-sub-indo`
    - Use the search endpoint to find correct slugs
@@ -753,7 +751,6 @@ curl -X POST http://localhost:8080/api/v1/streams/resolve \
 6. **Download Links**: Links in the batch endpoint may redirect through the source site's safelink system.
 
 7. **Streaming Resolution**:
-
    - Streaming URLs are not static.
    - Each mirror and resolution must be resolved individually using `/streams/resolve`.
    - Tokens may expire and should not be cached long-term.
