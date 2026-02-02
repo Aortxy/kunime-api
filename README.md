@@ -105,3 +105,16 @@ If you find this project helpful, consider buying me a coffee!
 <a href="https://buymeacoffee.com/kudanil" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
+
+This project is licensed under the **GNU Affero General Public License v3.0**.
+
+See the [`LICENSE`](LICENSE) file for full license text.
+
+```
+Copyright (C) 2026 Achmad Daniel Syahputra, Rizky Bintang Assabil
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+```
