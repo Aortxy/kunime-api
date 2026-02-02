@@ -105,5 +105,3 @@ If you find this project helpful, consider buying me a coffee!
 <a href="https://buymeacoffee.com/kudanil" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
-
-The project is licensed under the Apache License 2.0 - See [`LICENSE`](LICENSE) for more details
