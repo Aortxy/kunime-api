@@ -23,7 +23,9 @@ func (s *AnimeScraper) SearchAnime(
 	results := make([]anime.AnimeSearchResult, 0)
 
 	c.OnHTML(".page ul.chivsrc > li", func(e *colly.HTMLElement) {
-		title := strings.TrimSpace(e.ChildText("h2 > a"))
+		rawTitle := strings.TrimSpace(e.ChildText("h2 > a"))
+		title := cleanAnimeTitle(rawTitle)
+
 		href := strings.TrimSpace(e.ChildAttr("h2 > a", "href"))
 		image := strings.TrimSpace(e.ChildAttr("img", "src"))
 

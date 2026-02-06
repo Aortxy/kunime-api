@@ -3,9 +3,30 @@ package scraper
 import (
 	"net/url"
 	"path"
+	"regexp"
 	"strconv"
 	"strings"
 )
+
+var (
+	reEpisodeRange = regexp.MustCompile(`(?i)\(\s*episode\s*\d+\s*[-–]\s*\d+\s*\)`)
+	reSubtitle     = regexp.MustCompile(`(?i)\b(subtitle\s*indonesia|sub\s*indo)\b`)
+)
+
+func cleanAnimeTitle(raw string) string {
+	title := strings.TrimSpace(raw)
+
+	// Remove episode range e.g. (Episode 1 - 12)
+	title = reEpisodeRange.ReplaceAllString(title, "")
+
+	// Remove subtitle markers
+	title = reSubtitle.ReplaceAllString(title, "")
+
+	// Cleanup double spaces
+	title = strings.Join(strings.Fields(title), " ")
+
+	return title
+}
 
 // "Episode 10" -> 10
 func extractEpisodeNumber(epText string) int {
