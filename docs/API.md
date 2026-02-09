@@ -228,12 +228,20 @@ curl -X GET "http://localhost:8080/api/v1/completed-anime/1" \
   "page": 1,
   "data": [
     {
-      "title": "Frieren: Beyond Journey's End",
-      "episodes": 28,
-      "score": 9.37,
-      "date": "22 Mar",
-      "image": "https://otakudesu.best/wp-content/uploads/2023/frieren.jpg",
-      "endpoint": "https://otakudesu.best/anime/frieren-sub-indo/"
+      "title": "Takopii no Genzai",
+      "episodes": 6,
+      "score": 8.91,
+      "date": "14 Agu",
+      "image": "https://otakudesu.best/wp-content/uploads/2025/08/Takopii-no-Genzai-Sub-Indo.jpg",
+      "endpoint": "https://otakudesu.best/anime/takopii-genzai-sub-indo/"
+    },
+    {
+      "title": "Maebashi Witches",
+      "episodes": 12,
+      "score": 7,
+      "date": "12 Agu",
+      "image": "https://otakudesu.best/wp-content/uploads/2025/08/Maebashi-Witches-Sub-Indo.jpg",
+      "endpoint": "https://otakudesu.best/anime/maebashi-witches-sub-indo/"
     }
   ]
 }
@@ -763,6 +771,6 @@ For issues, feature requests, or contributions:
 - Submit pull requests
 - Contact: [hello.achmaddaniel@gmail.com](mailto:hello.achmaddaniel@gmail.com)
 
-**License**: [Apache License 2.0](../LICENSE)
+**License**: [AGPL-3.0](../LICENSE)
 
-**Last Updated**: December 2025
+**Last Updated**: February 2026
