@@ -664,15 +664,6 @@ curl -X POST http://localhost:8080/api/v1/streams/resolve \
 }
 ```
 
-### Streaming Flow
-
-#### 1. Get episode streams (mirrors + tokens)
-
-```bash
-curl -H "X-API-Key: supersecret" \
-http://localhost:8080/api/v1/anime/kni-s2-episode-1-sub-indo/streams
-```
-
 **Error Responses**
 
 The API uses standard HTTP status codes to indicate success or failure.
@@ -681,6 +672,15 @@ The API uses standard HTTP status codes to indicate success or failure.
 {
   "error": "Error message description"
 }
+```
+
+### Streaming Flow
+
+#### 1. Get episode streams (mirrors + tokens)
+
+```bash
+curl -H "X-API-Key: supersecret" \
+http://localhost:8080/api/v1/anime/kni-s2-episode-1-sub-indo/streams
 ```
 
 #### 2. Resolve a selected stream token into final streaming URL
