@@ -98,11 +98,15 @@ Full API details live in [`docs/API.md`](docs/API.md)
 - `internal/scraper` – scraping logic with Colly
 - `internal/middleware` – logging and API key middleware
 
-## Buy me a coffee
+## Support me
 
 If you find this project helpful, consider buying me a coffee!
 
 <a href="https://buymeacoffee.com/kudanil" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+<div>
+  <a href="https://saweria.co/achmaddaniel" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR381toYEI4e_5hJ3nvA5pzj2PrtNc42FvBgQ&s" alt="Saweria" ></a>
+</div>
 
 ## License
 
