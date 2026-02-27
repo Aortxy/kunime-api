@@ -1,4 +1,4 @@
-module kunime-api
+module kunime-api-ku
 
 go 1.25.5
 
