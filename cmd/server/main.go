@@ -6,10 +6,10 @@ import (
 
     "github.com/joho/godotenv"
 
-    "https://github.com/Aortxy/kunime-api/internal/anime"
-    "https://github.com/Aortxy/kunime-api/internal/config"
-    "https://github.com/Aortxy/kunime-api/internal/http"
-    "https://github.com/Aortxy/kunime-api/internal/scraper"
+    "github.com/Aortxy/kunime-api/internal/anime"
+    "github.com/Aortxy/kunime-api/internal/config"
+    "github.com/Aortxy/kunime-api/internal/http"
+    "github.com/Aortxy/kunime-api/internal/scraper"
 )
 
 // Exported handler for Vercel
