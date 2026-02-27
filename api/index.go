@@ -1,28 +1,23 @@
 package handler
 
 import (
-	"net/http"
+	"net/http" // Ini standard library
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
 	
 	"kunime-api/internal/config"
 	"kunime-api/internal/anime"
 	"kunime-api/internal/scraper"
-	"kunime-api/internal/http" // package router kamu namanya http di screenshot
+	myhttp "kunime-api/internal/http" // Kasih alias 'myhttp' supaya nggak bentrok
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	// 1. Load Config (Pastikan Env sudah diisi di Dashboard Vercel)
 	cfg := config.LoadConfig() 
-	
-	// 2. Init Service & Scraper (sesuaikan dengan logic di main.go kamu)
 	s := scraper.NewScraper()
 	animeSvc := anime.NewService(s)
 
-	// 3. Panggil NewServer kamu yang di screenshot tadi
-	// Karena di screenshot package-nya 'http', kita panggil http.NewServer
-	app := http.NewServer(cfg, animeSvc)
+	// Panggil pakai alias tadi
+	app := myhttp.NewServer(cfg, animeSvc)
 
-	// 4. Adaptor Fiber ke Vercel
 	adaptor.FiberApp(app)(w, r)
 }
