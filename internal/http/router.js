@@ -11,12 +11,6 @@ export function NewServer(cfg, animeSvc) {
     app.use(cors());
     app.use(express.json());
     app.use(Logging());
-
-    // Health check - before API Key middleware as per documentation
-    app.get("/healthz", (req, res) => {
-        res.json({ status: "ok" });
-    });
-
     app.use(APIKeyMiddleware(cfg.apiKey));
 
     const h = new AnimeHandler(animeSvc);
@@ -71,6 +65,11 @@ export function NewServer(cfg, animeSvc) {
     api.post("/streams/resolve", streamH.resolveStream);
 
     app.use("/api/v1", api);
+
+    // health check
+    app.get("/healthz", (req, res) => {
+        res.json({ status: "ok" });
+    });
 
     return app;
 }
