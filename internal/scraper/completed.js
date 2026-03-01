@@ -8,13 +8,13 @@ export async function scrapeCompletedAnime(scraper, page) {
     try {
         let url;
         if (page <= 1) {
-            url = `/complete-anime/`;
+            url = `complete-anime/`;
         } else {
-            url = `/complete-anime/page/${page}/`;
+            url = `complete-anime/page/${page}/`;
         }
 
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const completed = [];
 
         $("div.rapi div.venz ul li").each((i, el) => {

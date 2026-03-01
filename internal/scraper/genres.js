@@ -6,9 +6,9 @@ import { absoluteURL, extractGenreSlug } from './util.js';
 export async function scrapeGenres(scraper) {
     await acquire();
     try {
-        const url = `/genre-list/`;
+        const url = `genre-list/`;
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const genres = [];
 
         $("ul.genres li a").each((i, el) => {

@@ -23,17 +23,16 @@ export async function resolveStreamURL(scraper, token) {
         q: payload.q
     };
 
-    const response = await scraper.client.post('/wp-admin/admin-ajax.php', qs.stringify(form), {
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
+    const response = await scraper.client.post('wp-admin/admin-ajax.php', {
+        form: form,
+        responseType: 'json'
     });
 
-    if (!response.data || !response.data.data) {
+    if (!response.body || !response.body.data) {
         throw new Error("embed data empty");
     }
 
-    const decoded = Buffer.from(response.data.data, 'base64').toString('utf8');
+    const decoded = Buffer.from(response.body.data, 'base64').toString('utf8');
     const $ = cheerio.load(decoded);
 
     const src = $('iframe').attr('src');

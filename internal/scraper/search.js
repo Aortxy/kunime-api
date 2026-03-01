@@ -6,9 +6,9 @@ import { absoluteURL, cleanAnimeTitle } from './util.js';
 export async function searchAnime(scraper, query) {
     await acquire();
     try {
-        const searchURL = `/?s=${encodeURIComponent(query)}&post_type=anime`;
+        const searchURL = `?s=${encodeURIComponent(query)}&post_type=anime`;
         const response = await visitWithRetry(() => scraper.client.get(searchURL));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const results = [];
 
         $(".page ul.chivsrc > li").each((i, el) => {

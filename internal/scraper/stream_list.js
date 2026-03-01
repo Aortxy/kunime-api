@@ -5,9 +5,9 @@ import { visitWithRetry } from './retry.js';
 export async function scrapeEpisodeStreams(scraper, episodeSlug) {
     await acquire();
     try {
-        const url = `/episode/${episodeSlug}/`;
+        const url = `episode/${episodeSlug}/`;
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const results = [];
 
         $(".mirrorstream ul").each((i, el) => {

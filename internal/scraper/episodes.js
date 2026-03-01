@@ -6,9 +6,9 @@ import { extractEpisodeFromTitle, extractEpisodeSlug } from './util.js';
 export async function scrapeAnimeEpisodes(scraper, animeSlug) {
     await acquire();
     try {
-        const url = `/anime/${animeSlug}/`;
+        const url = `anime/${animeSlug}/`;
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const episodes = [];
 
         $("div.episodelist ul > li").each((i, el) => {

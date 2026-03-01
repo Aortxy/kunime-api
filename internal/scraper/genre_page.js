@@ -6,9 +6,9 @@ import { absoluteURL } from './util.js';
 export async function scrapeGenrePage(scraper, slug, page) {
     await acquire();
     try {
-        const url = `/genres/${slug}/page/${page}/`;
+        const url = `genres/${slug}/page/${page}/`;
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const items = [];
 
         $("div.venser div.col-anime-con").each((i, el) => {

@@ -8,13 +8,13 @@ export async function scrapeOngoingAnime(scraper, page) {
     try {
         let url;
         if (page <= 1) {
-            url = `/ongoing-anime/`;
+            url = `ongoing-anime/`;
         } else {
-            url = `/ongoing-anime/page/${page}/`;
+            url = `ongoing-anime/page/${page}/`;
         }
 
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const ongoings = [];
 
         $("div.venser div.venz ul li").each((i, el) => {

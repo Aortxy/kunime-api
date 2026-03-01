@@ -5,9 +5,9 @@ import { visitWithRetry } from './retry.js';
 export async function scrapeAnimeBatch(scraper, animeSlug) {
     await acquire();
     try {
-        const url = `/batch/${animeSlug}/`;
+        const url = `batch/${animeSlug}/`;
         const response = await visitWithRetry(() => scraper.client.get(url));
-        const $ = cheerio.load(response.data);
+        const $ = cheerio.load(response.body);
         const result = {
             title: "",
             qualities: []
